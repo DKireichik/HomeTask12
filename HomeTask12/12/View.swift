@@ -9,7 +9,7 @@ import UIKit
 
 
     protocol ViewDelegate: AnyObject {
-        func printText(_ textField: String)
+        func printText()
     }
 
 
@@ -91,7 +91,7 @@ class View: UIView, UITextFieldDelegate{
         firstNameText.borderStyle = .roundedRect
         firstNameText.topAnchor.constraint(equalTo: imageView.topAnchor).isActive = true
         firstNameText.leftAnchor.constraint(equalTo: middleNameText.leftAnchor).isActive = true
-        firstNameText.addTarget(self, action: #selector(textFieldDidBeginEditing), for: .editingChanged)
+//        firstNameText.addTarget(self, action: #selector(textFieldDidBeginEditing), for: .editingChanged)
         
         lastNameText.placeholder = "Enter Last Name"
         lastNameText.textColor = .black
@@ -110,11 +110,11 @@ class View: UIView, UITextFieldDelegate{
         fatalError("init(coder:) has not been implemented")
     }
     
-   @IBAction func textFieldDidBeginEditing(_ textField: UITextField)  {
-       print (firstNameText.text!)
+//   @IBAction func textFieldDidBeginEditing(_ textField: UITextField)  {
+//       print (firstNameText.text!)
      
 
-    }
+//    }
 }
 
         
