@@ -9,6 +9,9 @@ import UIKit
 
 
 class ViewController: UIViewController, ViewDelegate {
+    func printText() {
+    }
+    
 
     
     
@@ -23,20 +26,8 @@ class ViewController: UIViewController, ViewDelegate {
         customView.topAnchor.constraint(equalTo: view.topAnchor, constant: 80).isActive = true
         customView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
         customView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
-        customView.firstNameText.addTarget(self, action: #selector(printText), for: .editingChanged)
-        
+        customView.heightAnchor.constraint(equalToConstant: 150).isActive = true
     }
     
-    @IBAction func printText() {
-        print (customView.firstNameText.text!)
-    }
-    
-  
-   
-       
-    
-    
-    
-
 }
 
