@@ -9,8 +9,7 @@ import UIKit
 
 
     protocol ViewDelegate: AnyObject {
-        func textFieldDidBeginEditing(_ textField: UITextField)
-
+        func printText(_ textField: String)
     }
 
 
@@ -29,6 +28,7 @@ class View: UIView, UITextFieldDelegate{
     
         let lastLabel = UILabel()
         let lastNameText = UITextField()
+
    
     
     override init(frame: CGRect) {
@@ -42,6 +42,8 @@ class View: UIView, UITextFieldDelegate{
         addSubview(firstNameText)
         addSubview(middleNameText)
         addSubview(lastNameText)
+        
+      
         
         imageView.image = .imageFood
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -89,7 +91,7 @@ class View: UIView, UITextFieldDelegate{
         firstNameText.borderStyle = .roundedRect
         firstNameText.topAnchor.constraint(equalTo: imageView.topAnchor).isActive = true
         firstNameText.leftAnchor.constraint(equalTo: middleNameText.leftAnchor).isActive = true
-        
+        firstNameText.addTarget(self, action: #selector(textFieldDidBeginEditing), for: .editingChanged)
         
         lastNameText.placeholder = "Enter Last Name"
         lastNameText.textColor = .black
@@ -99,20 +101,19 @@ class View: UIView, UITextFieldDelegate{
         lastNameText.leftAnchor.constraint(equalTo: middleNameText.leftAnchor).isActive = true
         lastNameText.topAnchor.constraint(equalTo: middleNameText.bottomAnchor, constant: 6).isActive = true
         
-       
+
        
     }
+   
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
- 
-    func setupForm () {
-        firstNameText.delegate = self
-//        middleNameText.delegate = self
-//        lastNameText.delegate = self
+    
+   @IBAction func textFieldDidBeginEditing(_ textField: UITextField)  {
+       print (firstNameText.text!)
+     
 
-        
     }
 }
 
