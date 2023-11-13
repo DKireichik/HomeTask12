@@ -101,8 +101,7 @@ class View: UIView, UITextFieldDelegate{
         lastNameText.leftAnchor.constraint(equalTo: middleNameText.leftAnchor).isActive = true
         lastNameText.topAnchor.constraint(equalTo: middleNameText.bottomAnchor, constant: 6).isActive = true
         
-
-       
+        
     }
    
     
