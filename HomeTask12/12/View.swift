@@ -34,7 +34,7 @@ class View: UIView, UITextFieldDelegate{
     override init(frame: CGRect) {
         super.init(frame: frame)
       
-        delegate?.printText()
+ 
         addSubview(imageView)
         addSubview(firstLabel)
         addSubview(middleLabel)
@@ -110,6 +110,7 @@ class View: UIView, UITextFieldDelegate{
     
     
    @IBAction func printText() {
+           self.delegate?.printText()
            print (firstNameText.text!, middleNameText.text!,lastNameText.text!)
            
        }

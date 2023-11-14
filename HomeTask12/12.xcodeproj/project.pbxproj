@@ -14,6 +14,7 @@
 		4BC3F6392AFE0DA40099870C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC3F6382AFE0DA40099870C /* Assets.xcassets */; };
 		4BC3F63C2AFE0DA40099870C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC3F63A2AFE0DA40099870C /* LaunchScreen.storyboard */; };
 		4BC3F6442AFE0F680099870C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3F6432AFE0F680099870C /* View.swift */; };
+		4BC3F6462B0369180099870C /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3F6452B0369180099870C /* UITextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		4BC3F63B2AFE0DA40099870C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BC3F63D2AFE0DA40099870C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BC3F6432AFE0F680099870C /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		4BC3F6452B0369180099870C /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				4BC3F6312AFE0DA20099870C /* SceneDelegate.swift */,
 				4BC3F6332AFE0DA20099870C /* ViewController.swift */,
 				4BC3F6432AFE0F680099870C /* View.swift */,
+				4BC3F6452B0369180099870C /* UITextView.swift */,
 				4BC3F6352AFE0DA20099870C /* Main.storyboard */,
 				4BC3F6382AFE0DA40099870C /* Assets.xcassets */,
 				4BC3F63A2AFE0DA40099870C /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				4BC3F6442AFE0F680099870C /* View.swift in Sources */,
 				4BC3F6342AFE0DA20099870C /* ViewController.swift in Sources */,
+				4BC3F6462B0369180099870C /* UITextView.swift in Sources */,
 				4BC3F6302AFE0DA20099870C /* AppDelegate.swift in Sources */,
 				4BC3F6322AFE0DA20099870C /* SceneDelegate.swift in Sources */,
 			);
