@@ -26,18 +26,17 @@ class UIText: UIView {
         notes.translatesAutoresizingMaskIntoConstraints = false
         notes.backgroundColor = .gray
         notes.text = "Notes:"
-        notes.isScrollEnabled = true
-        notes.heightAnchor.constraint(equalToConstant: 400).isActive = true
-        notes.widthAnchor.constraint(equalToConstant: 361).isActive = true
+        notes.isScrollEnabled = false
+        notes.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        notes.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        notes.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        notes.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        
         
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-//    @IBAction func printNotes() {
-//            self.delegate?.printNotes()
-//            print (notes.text!)
-//            
-//        }
+
 
 }

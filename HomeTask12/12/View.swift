@@ -9,7 +9,7 @@ import UIKit
 
 
     protocol ViewDelegate: AnyObject {
-        func printText()
+        func printText(text : String)
     }
 
 
@@ -30,6 +30,7 @@ class View: UIView, UITextFieldDelegate{
         let lastNameText = UITextField()
 
    
+ 
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -81,7 +82,7 @@ class View: UIView, UITextFieldDelegate{
         middleNameText.borderStyle = .roundedRect
         middleNameText.leftAnchor.constraint(equalTo: middleLabel.rightAnchor, constant: 16).isActive = true
         middleNameText.topAnchor.constraint(equalTo: firstNameText.bottomAnchor, constant: 6).isActive = true
-        middleNameText.addTarget(self, action: #selector(printText), for: .editingChanged)
+        middleNameText.delegate = self
         
         firstNameText.placeholder = "Enter First Name"
         firstNameText.textColor = .black
@@ -90,7 +91,7 @@ class View: UIView, UITextFieldDelegate{
         firstNameText.borderStyle = .roundedRect
         firstNameText.topAnchor.constraint(equalTo: imageView.topAnchor).isActive = true
         firstNameText.leftAnchor.constraint(equalTo: middleNameText.leftAnchor).isActive = true
-        firstNameText.addTarget(self, action: #selector(printText), for: .editingChanged)
+        firstNameText.delegate = self
         
         lastNameText.placeholder = "Enter Last Name"
         lastNameText.textColor = .black
@@ -99,8 +100,7 @@ class View: UIView, UITextFieldDelegate{
         lastNameText.borderStyle = .roundedRect
         lastNameText.leftAnchor.constraint(equalTo: middleNameText.leftAnchor).isActive = true
         lastNameText.topAnchor.constraint(equalTo: middleNameText.bottomAnchor, constant: 6).isActive = true
-        lastNameText.addTarget(self, action: #selector(printText), for: .editingChanged)
-        
+        lastNameText.delegate = self
     }
    
     
@@ -109,13 +109,16 @@ class View: UIView, UITextFieldDelegate{
     }
     
     
-   @IBAction func printText() {
-           self.delegate?.printText()
-           print (firstNameText.text!, middleNameText.text!,lastNameText.text!)
-           
-       }
+   
      
+    @IBAction   func textFieldDidBeginEditing(_ textField: UITextField){
+        self.delegate?.printText(text: textField.text ?? "")
+    }
 
+  
+    @IBAction  func textFieldDidEndEditing(_ textField: UITextField){
+        self.delegate?.printText(text: textField.text ?? "")
+    }
     
 }
 
