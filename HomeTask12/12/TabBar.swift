@@ -9,7 +9,7 @@ import UIKit
 
 protocol TabBarDelegate : AnyObject {
     func saveButtonPressed (_ sender: TabBar)
-//    func textFieldShouldClear(_ textField: UITextField)
+    func textFieldShouldClear(_ sender: TabBar)
 }
 class TabBar: UIView {
   
@@ -58,7 +58,7 @@ class TabBar: UIView {
     @IBAction func saveText (_ sender: UIButton) {
         delegate?.saveButtonPressed(self)
     }
-//        @IBAction func clearText (_ textField: UITextField) {
-//            delegate?.textFieldShouldClear(self)
-//        }
+    @IBAction func clearText (_ sender: UIButton) {
+            delegate?.textFieldShouldClear(self)
+    }
 }

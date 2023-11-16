@@ -108,17 +108,20 @@ class View: UIView, UITextFieldDelegate{
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        delegate?.printText(text: textField.text ?? "")
+    }
    
+    
      
-    @IBAction   func textFieldDidBeginEditing(_ textField: UITextField){
-        self.delegate?.printText(text: textField.text ?? "")
-    }
-
-  
-    @IBAction  func textFieldDidEndEditing(_ textField: UITextField){
-        self.delegate?.printText(text: textField.text ?? "")
-    }
+//   func textFieldDidBeginEditing(_ textField: UITextField){
+//        delegate?.printText(text: textField.text ?? "")
+//    }
+//
+//  
+//   func textFieldDidEndEditing(_ textField: UITextField){
+//        delegate?.printText(text: textField.text ?? "")
+//    }
     
 }
 

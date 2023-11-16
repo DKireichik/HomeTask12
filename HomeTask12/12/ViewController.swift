@@ -8,6 +8,7 @@ class ViewController: UIViewController, ViewDelegate, UITextDelegate, TabBarDele
     let uiTextView = UIText()
     let tabBar = TabBar()
     
+    var savedText = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,8 @@ class ViewController: UIViewController, ViewDelegate, UITextDelegate, TabBarDele
         customView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
         customView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
         customView.heightAnchor.constraint(equalToConstant: 110).isActive = true
+   
+        
         
         uiTextView.delegate = self
         view.addSubview(uiTextView)
@@ -36,17 +39,24 @@ class ViewController: UIViewController, ViewDelegate, UITextDelegate, TabBarDele
         tabBar.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
         tabBar.heightAnchor.constraint(equalToConstant: 50).isActive = true
         tabBar.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+       
+       
     }
     
     func printNotes() {
       
     }
     
+
     func printText(text : String) {
-//        print(text)
+      savedText = text
     }
     func saveButtonPressed(_ sender: TabBar) {
-        customView.delegate?.printText(text: <#T##String#>)
+      print(savedText)
+    }
+    func textFieldShouldClear(_ sender: TabBar)  {
+    
+   
     }
 }
 
